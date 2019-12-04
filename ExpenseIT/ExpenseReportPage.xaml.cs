@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpenseIT.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,13 +24,21 @@ namespace ExpenseIT
         public ExpenseReportPage()
         {
             InitializeComponent();
+
+
         }
 
         // Custom constructor to pass expense report data
         public ExpenseReportPage(object data) : this()
         {
-            // Bind to expense report data.
-            this.DataContext = data;
+            // Datele primite sunt transformate in PersonModel
+            PersonModel person = (PersonModel) data;
+
+
+            //Definim datele care vor fi afisate.
+            nameLabel.Content = person.FullName;
+            departmentLabel.Content = person.email;
+
         }
 
     }

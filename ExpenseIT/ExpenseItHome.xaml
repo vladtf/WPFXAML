@@ -69,9 +69,7 @@
             <Label Style="{StaticResource listHeaderTextStyle}">Names</Label>
         </Border>
 
-        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2" 
-                 ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
-                 ItemTemplate="{StaticResource nameItemTemplate}">
+        <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2">
         </ListBox>
 
         <!-- View report button -->

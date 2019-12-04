@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpenseIT.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace ExpenseIT
     /// </summary>
     public partial class ExpenseItHome : Page
     {
+        //Definesc o lista de persoane.
+        private List<PersonModel> people;
         public ExpenseItHome()
         {
             InitializeComponent();
+
+            //Populez lista de persone cu datele din baza de date.
+            people = DataAcces.GetPeople();
+
+
+            //Setez sursa de data pentru peopleListBox
+            peopleListBox.ItemsSource = people;
+
+            //Definesc membrul afisast (first_name,last_name,id ... )
+            peopleListBox.DisplayMemberPath = "last_name";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
